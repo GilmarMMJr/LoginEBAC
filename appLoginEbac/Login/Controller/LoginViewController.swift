@@ -1,5 +1,5 @@
 //
-//  LoginController.swift
+//  LoginViewController.swift
 //  appLoginEbac
 //
 //  Created by Gilmar Junior on 30/07/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginController: UIViewController {
+class LoginViewController: UIViewController {
     
     var loginScreen: LoginScreen?
     

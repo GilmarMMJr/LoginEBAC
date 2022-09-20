@@ -17,7 +17,7 @@ class HomeTabBarController: UITabBarController {
     
     private func setupTabBarcontroller(){
         
-        let notice = UINavigationController(rootViewController: NoticeTableViewController())
+        let notice = UINavigationController(rootViewController: NoticeViewController())
         let profire = UINavigationController(rootViewController: ProfileViewController())
         
         self.setViewControllers([notice, profire], animated: false)
