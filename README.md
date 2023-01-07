@@ -1,6 +1,6 @@
-<h1>Aplicativo Login Noticias</h1>
+<h1>Aplicativo Noticias</h1>
 Aplicativo criado para o exercio do curso de Swift da EBAC.
-O objetivo dessa aula era criar um aplicativo com integracão ao firebase para realizar o Login, mas fui um pouco mas alem e implementei Coordinator e viewCode. 
+O objetivo dessa aula era criar um aplicativo com integração ao firebase para realizar o Login, mas fui um pouco mais além e implementei Coordinator e viewCode. 
 Assuntos abordados:
 
 * Cocoapods
