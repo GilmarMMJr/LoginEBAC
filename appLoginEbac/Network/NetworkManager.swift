@@ -16,7 +16,8 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     struct Constants {
-        static let newsAPI = URL(string: "https://web-ebac-ios.herokuapp.com/home")
+//        static let newsAPI = URL(string: "https://web-ebac-ios.herokuapp.com/home")
+        static let newsAPI = URL(string: "http://127.0.0.1:8080/Home")
     }
     
     private init(){ }
