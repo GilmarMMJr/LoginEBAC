@@ -8,7 +8,6 @@
 import UIKit
 import FirebaseAuth
 
-
 class RegisterViewController: UIViewController {
     
     lazy var auth = Auth.auth()

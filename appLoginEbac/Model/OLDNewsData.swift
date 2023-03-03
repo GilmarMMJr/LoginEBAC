@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NewsData {
+struct OLDNewsData {
     let title: String
     let byline: String
     let image: String

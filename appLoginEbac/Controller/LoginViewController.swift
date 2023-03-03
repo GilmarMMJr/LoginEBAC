@@ -7,10 +7,14 @@
 
 import UIKit
 import FirebaseAuth
+import CoreData
 
 class LoginViewController: UIViewController {
     
     var coordinator: MainCoordinator?
+    
+    var dataController: DataController!
+    
     lazy var auth = Auth.auth()
     lazy var loginScreen: LoginScreen = {
         let view = LoginScreen(frame: .zero)
@@ -24,7 +28,7 @@ class LoginViewController: UIViewController {
         
                 if auth.currentUser != nil {
                     DispatchQueue.main.async {
-                        self.coordinator?.startHome()
+                        self.coordinator?.startHome(dataController: self.dataController)
                     }
                 }
     }
@@ -64,7 +68,7 @@ class LoginViewController: UIViewController {
     
     func completeLogin() {
         DispatchQueue.main.async {
-            self.coordinator?.startHome()
+            self.coordinator?.startHome(dataController: self.dataController)
         }
     }
     

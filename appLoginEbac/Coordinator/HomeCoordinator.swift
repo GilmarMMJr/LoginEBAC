@@ -24,6 +24,12 @@ class HomeCoordinator: NSObject, Coordinator {
         navigationController.pushViewController(viewController, animated: false)
     }
     
+    func start1(dataController: DataController) {
+        let viewController = HomeViewController()
+        viewController.dataController = dataController
+        navigationController.pushViewController(viewController, animated: false)
+    }
+    
 
 }
 

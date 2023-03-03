@@ -11,7 +11,7 @@ class CustonTableViewCell: UITableViewCell {
 
     static let identifier:String = "CustomTableViewCell"
     
-    private let title: UILabel = {
+    let title: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
@@ -20,7 +20,7 @@ class CustonTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let imageNews: UIImageView = {
+    let imageNews: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleToFill
@@ -28,7 +28,7 @@ class CustonTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private let author: UILabel = {
+    let author: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
@@ -75,22 +75,22 @@ class CustonTableViewCell: UITableViewCell {
 
 extension CustonTableViewCell {
     
-    func prepare(with news: NewsData) {
-        
-        title.text = news.title
-        author.text = news.byline
-        
-        guard let urlImage = URL(string: news.image) else {return}
-        
-        URLSession.shared.dataTask(with: urlImage) { data, _, error in
-            guard let data = data, error == nil else {
-                return
-            }
-            DispatchQueue.main.async {
-                self.imageNews.image = UIImage(data: data)
-            }
-        }.resume()
-    }
+//    func prepare(with news: NewsData) {
+//
+//        title.text = news.title
+//        author.text = news.byline
+//
+//        guard let urlImage = URL(string: news.image) else {return}
+//
+//        URLSession.shared.dataTask(with: urlImage) { data, _, error in
+//            guard let data = data, error == nil else {
+//                return
+//            }
+//            DispatchQueue.main.async {
+//                self.imageNews.image = UIImage(data: data)
+//            }
+//        }.resume()
+//    }
     
 }
 

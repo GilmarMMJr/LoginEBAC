@@ -29,7 +29,9 @@
 		51B1EE0D28B134C4007A04BC /* CustonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1EE0C28B134C4007A04BC /* CustonTableViewCell.swift */; };
 		51B1EE1128BC3812007A04BC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1EE1028BC3812007A04BC /* NetworkManager.swift */; };
 		51B1EE1328BC394C007A04BC /* ResponseNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1EE1228BC394C007A04BC /* ResponseNews.swift */; };
-		51B1F71928DA7ECA006FB8B2 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1F71828DA7ECA006FB8B2 /* NewsData.swift */; };
+		51B1F71928DA7ECA006FB8B2 /* OLDNewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1F71828DA7ECA006FB8B2 /* OLDNewsData.swift */; };
+		51B795B229A4E75300B6731D /* appLoginEBAC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51B795B029A4E75200B6731D /* appLoginEBAC.xcdatamodeld */; };
+		51B795B429A4EBF500B6731D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B795B329A4EBF500B6731D /* DataController.swift */; };
 		51BEBD50294A4293000991DA /* TabBarItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BEBD4F294A4293000991DA /* TabBarItemConfiguration.swift */; };
 		51BEBD52294A448A000991DA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BEBD51294A448A000991DA /* TabBarController.swift */; };
 		51BEBD54294A91D8000991DA /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BEBD53294A91D8000991DA /* MainCoordinator.swift */; };
@@ -63,7 +65,9 @@
 		51B1EE0C28B134C4007A04BC /* CustonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonTableViewCell.swift; sourceTree = "<group>"; };
 		51B1EE1028BC3812007A04BC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		51B1EE1228BC394C007A04BC /* ResponseNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseNews.swift; sourceTree = "<group>"; };
-		51B1F71828DA7ECA006FB8B2 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
+		51B1F71828DA7ECA006FB8B2 /* OLDNewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDNewsData.swift; sourceTree = "<group>"; };
+		51B795B129A4E75200B6731D /* appLoginEBAC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = appLoginEBAC.xcdatamodel; sourceTree = "<group>"; };
+		51B795B329A4EBF500B6731D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		51BEBD4F294A4293000991DA /* TabBarItemConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemConfiguration.swift; sourceTree = "<group>"; };
 		51BEBD51294A448A000991DA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		51BEBD53294A91D8000991DA /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -188,7 +192,9 @@
 		51B1F72A28DA86B8006FB8B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				51B1F71828DA7ECA006FB8B2 /* NewsData.swift */,
+				51B1F71828DA7ECA006FB8B2 /* OLDNewsData.swift */,
+				51B795B029A4E75200B6731D /* appLoginEBAC.xcdatamodeld */,
+				51B795B329A4EBF500B6731D /* DataController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,7 +333,9 @@
 				5180CAE829070AFD00BEBA19 /* Utils.swift in Sources */,
 				51BEBD54294A91D8000991DA /* MainCoordinator.swift in Sources */,
 				513E6F5D28961FDC00234156 /* LoginViewController.swift in Sources */,
-				51B1F71928DA7ECA006FB8B2 /* NewsData.swift in Sources */,
+				51B795B229A4E75300B6731D /* appLoginEBAC.xcdatamodeld in Sources */,
+				51B795B429A4EBF500B6731D /* DataController.swift in Sources */,
+				51B1F71928DA7ECA006FB8B2 /* OLDNewsData.swift in Sources */,
 				51A9B26328FA02BD007430FB /* ProfileScreen.swift in Sources */,
 				517DD805292189B80054B51B /* Coordinator.swift in Sources */,
 				517DD80729218DB10054B51B /* RegisterCoordinator.swift in Sources */,
@@ -552,6 +560,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		51B795B029A4E75200B6731D /* appLoginEBAC.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				51B795B129A4E75200B6731D /* appLoginEBAC.xcdatamodel */,
+			);
+			currentVersion = 51B795B129A4E75200B6731D /* appLoginEBAC.xcdatamodel */;
+			path = appLoginEBAC.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 513E6F4D28961FDC00234156 /* Project object */;
 }

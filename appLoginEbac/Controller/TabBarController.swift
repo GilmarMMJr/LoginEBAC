@@ -12,6 +12,8 @@ class TabBarController: UITabBarController {
     //MARK: - Properts
     let coordinatorForTab0 = MainCoordinator(navigationController: UINavigationController())
     let coordinatorForTab1 = MainCoordinator(navigationController: UINavigationController())
+    
+    var dataController: DataController!
 
     override func loadView() {
         super.loadView()
@@ -24,8 +26,8 @@ class TabBarController: UITabBarController {
         
         self.tabBar.backgroundColor = .white
         
-        coordinatorForTab0.startTab(tab: .tab0)
-        coordinatorForTab1.startTab(tab: .tab1)
+        coordinatorForTab0.startTab(tab: .tab0, dataController: self.dataController)
+        coordinatorForTab1.startTab(tab: .tab1, dataController: self.dataController)
         
         viewControllers = [
             coordinatorForTab0.navigationController,

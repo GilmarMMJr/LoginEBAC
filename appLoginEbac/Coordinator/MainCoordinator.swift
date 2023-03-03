@@ -25,18 +25,26 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func startHome() {
+    func start1(dataController: DataController) {
+        let viewController = LoginViewController()
+        viewController.coordinator = self
+        viewController.dataController = dataController
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func startHome(dataController: DataController) {
         let tabBarViewController = TabBarController()
+        tabBarViewController.dataController = dataController
         tabBarViewController.modalPresentationStyle = .fullScreen
         navigationController.present(tabBarViewController, animated: false)
     }
     
-    func startTab(tab: TabBarItemConfiguration) {
+    func startTab(tab: TabBarItemConfiguration, dataController: DataController) {
         
         switch tab {
         case .tab0:
             let coordinator = HomeCoordinator(navigationController: self.navigationController)
-            coordinator.start()
+            coordinator.start1(dataController: dataController)
         case .tab1:
             let coordinator = ProfileCoordinator(navigationController: self.navigationController)
             coordinator.start()
