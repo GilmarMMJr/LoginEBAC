@@ -9,12 +9,6 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    //MARK: - Properts
-    let coordinatorForTab0 = MainCoordinator(navigationController: UINavigationController())
-    let coordinatorForTab1 = MainCoordinator(navigationController: UINavigationController())
-    
-    var dataController: DataController!
-
     override func loadView() {
         super.loadView()
         
@@ -25,29 +19,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         self.tabBar.backgroundColor = .white
-        
-        coordinatorForTab0.startTab(tab: .tab0, dataController: self.dataController)
-        coordinatorForTab1.startTab(tab: .tab1, dataController: self.dataController)
-        
-        viewControllers = [
-            coordinatorForTab0.navigationController,
-            coordinatorForTab1.navigationController
-        ]
-        
-        start(tab: .tab0, vc: coordinatorForTab0.navigationController)
-        start(tab: .tab1, vc: coordinatorForTab1.navigationController)
-        
-    }
-    
-    private func start(tab: TabBarItemConfiguration, vc: UIViewController) {
-    
-        let title = tab.tabBarItemTitle
-        let image = UIImage(systemName: tab.tabBarItemImageNamed)
-        let selectImage = UIImage(systemName: tab.tabBarItemImageNamed)
-        
-        vc.tabBarItem = UITabBarItem(title: title,
-                                     image: image,
-                                     selectedImage: selectImage)
+        self.modalPresentationStyle = .fullScreen
         
     }
     

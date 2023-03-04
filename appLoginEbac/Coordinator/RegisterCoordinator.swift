@@ -22,7 +22,6 @@ class RegisterCoordinator: Coordinator {
     func start() {
         let vc = RegisterViewController()
         navigationController.pushViewController(vc, animated: false)
-//        navigationController.present(vc, animated: true)
     }
         
 }

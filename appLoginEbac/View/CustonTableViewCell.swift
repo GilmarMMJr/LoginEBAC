@@ -72,25 +72,3 @@ class CustonTableViewCell: UITableViewCell {
     
 }
 
-
-extension CustonTableViewCell {
-    
-//    func prepare(with news: NewsData) {
-//
-//        title.text = news.title
-//        author.text = news.byline
-//
-//        guard let urlImage = URL(string: news.image) else {return}
-//
-//        URLSession.shared.dataTask(with: urlImage) { data, _, error in
-//            guard let data = data, error == nil else {
-//                return
-//            }
-//            DispatchQueue.main.async {
-//                self.imageNews.image = UIImage(data: data)
-//            }
-//        }.resume()
-//    }
-    
-}
-

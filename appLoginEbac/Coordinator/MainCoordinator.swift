@@ -7,16 +7,18 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: NSObject, Coordinator, UITabBarControllerDelegate {
     
     //MARK: - Properts
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
+    var tabBarController: TabBarController
     
     //MARK: - Initializers
     init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
+            self.navigationController = navigationController
+            self.tabBarController = TabBarController()
+        }
     
     //MARK: - Methods
     func start() {
@@ -33,25 +35,24 @@ class MainCoordinator: Coordinator {
     }
     
     func startHome(dataController: DataController) {
-        let tabBarViewController = TabBarController()
-        tabBarViewController.dataController = dataController
-        tabBarViewController.modalPresentationStyle = .fullScreen
-        navigationController.present(tabBarViewController, animated: false)
-    }
-    
-    func startTab(tab: TabBarItemConfiguration, dataController: DataController) {
-        
-        switch tab {
-        case .tab0:
-            let coordinator = HomeCoordinator(navigationController: self.navigationController)
-            coordinator.start1(dataController: dataController)
-        case .tab1:
-            let coordinator = ProfileCoordinator(navigationController: self.navigationController)
-            coordinator.start()
+        let homeViewController = HomeViewController()
+        homeViewController.dataController = dataController
+        let profileViewController = ProfileViewController()
+
+        let tabBarItems = [TabBarItemConfiguration.tab0, TabBarItemConfiguration.tab1]
+
+        let viewControllers = tabBarItems.map { item -> UINavigationController in
+            let viewController = item == .tab0 ? homeViewController : profileViewController
+            viewController.tabBarItem = UITabBarItem(title: item.tabBarItemTitle, image: UIImage(systemName: item.tabBarItemImageNamed), tag: 0)
+
+            return UINavigationController(rootViewController: viewController)
         }
+
+        tabBarController.viewControllers = viewControllers
+        tabBarController.delegate = self
+        navigationController.present(tabBarController, animated: true)
+    } 
         
-    }
-    
     func startRegister() {
         let coordinator = RegisterCoordinator(navigationController: self.navigationController)
         coordinator.start()
